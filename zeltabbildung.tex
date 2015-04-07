@@ -203,10 +203,13 @@ das heißt, zuerst wendet man $f$ an und danach $g$ auf das Ergebnis von $f$.
 \end{bem}
 
 \begin{beispiel}
-Sei $f:x\mapsto 2x$ und $b$ unsere Betragsfunktion. Dann ist
-\[
-b\circ f: x\mapsto |2x|.
-\]
+  \begin{enumerate}
+    \item Sei $f:x\mapsto 2x$ und $b$ unsere Betragsfunktion. Dann ist
+      \[
+        b\circ f: x\mapsto |2x|.
+      \]
+    \item
+  \end{enumerate}
 \end{beispiel}
 
 \begin{aufgabe}{Vertauschen von Kompositionen}
@@ -221,8 +224,8 @@ Eine interessante Frage ist, ob man eine gegebene Abbildung "`umkehren"' kann.
 \begin{definition}
 Sei $f:A\longrightarrow B$. Eine Abbildung $f^{-1}:B\longrightarrow A$ heißt \emph{Umkehrabbildung} von $f$, wenn gilt:
 \begin{align*}
-f&\circ f^{-1} = \text{id}_B\\
-f^{-1}&\circ f = \text{id}_A.
+f\circ f^{-1}& = \text{id}_B\\
+f^{-1}\circ f& = \text{id}_A.
 \end{align*}
 \end{definition}
 
@@ -233,9 +236,10 @@ Wenn $A$ und $B$ unterschiedlich viele Elemente haben, kann es keine Umkehrabbil
 
 Tipp: Behandle die beiden Fälle
 \begin{enumerate}
-\item $A$ hat mehr Elemente als $B$
+\item $A$ hat mehr Elemente als $B$ und
 \item $B$ hat mehr Elemente als $A$
 \end{enumerate}
+einzeln.
 \end{aufgabe}
 
 % \begin{aufgabe}
@@ -249,9 +253,11 @@ Tipp: Behandle die beiden Fälle
 % \end{aufgabe}
 
 \section{Iterierte Funktionsysteme}
-Haben wir eine Funktion $f:A\longrightarrow A$ von einer Menge in sicher selber, können wir betrachten, was passiert, wenn wir die Abbildung immer wieder mit sich selbst Verknüpfen. Dies bezeichnen wir als iteriertes\footnote{Itereren bedeutet einfach Wiederholen} Funktionsystem $f$ auf $A$.
+
+Haben wir eine Funktion $f:A\longrightarrow A$ von einer Menge in sicher selber, können wir diese immer wieder mit sich selbst verknüpfen. Dies bezeichnen wir als iteriertes\footnote{Iterieren bedeutet einfach Wiederholen.} Funktionsystem $f$ auf $A$.
 \begin{beispiel}
-Wir haben die Menge $A=\{1,2,3,4 \}$. Betrachten wir die Funktion
+\label{bsp11}
+Wir haben die Menge $A=\{1,2,3,4 \}$. Betrachte die Funktion
 \[
 f(x)=\begin{cases}
 2 & x=2 \\
@@ -261,23 +267,49 @@ f(x)=\begin{cases}
 \]
 Das wird unsere Standardbeispiel für den Rest dieses Abschnitts. 
 \end{beispiel}
-Da es sehr mühsam ist, mit $\circ$ die Verknüpfung zu schreiben, gibt es eine verkürzende Schriebweise
+
+\begin{aufgabe}{Funktionsgraphen}
+  In der Schule lernt ihr das auch sehr intensiv kennen: Malt den \emph{Funktionsgraphen} von $f$. Das heißt, ihr tragt in der horizontalen Richtung die $x$-Werte zum Beispiel von $-4$ bis $4$ und in der vertikalen Richtung die zugehörigen Werte von $f(x)$ ab. Dies hilft um sich vorzustellen, was eine Funktion macht.
+\end{aufgabe}
+
+Da es sehr mühsam ist, mit $\circ$ die Verknüpfung zu schreiben, gibt es eine verkürzende Schreibweise.
+
 \begin{definition}
+Wir definieren
 \begin{align*}
-f^n &= \underbrace{f \circ f \circ f \circ \ldots \circ f}_{\text{n-mal}}\\
-f^0 &= id|_A.
+f^n &:= \underbrace{f \circ f \circ f \circ \ldots \circ f}_{\text{n-mal}}, \\
+f^0 &:= \id|_A.
 \end{align*} 
 \end{definition}
-Was bei einem iterierten Funktionensystem vorallem interessiert, ist, wie sich ein Punkt $x$ verhält, besonderens, wenn wir die Abbildung sehr oft anwenden.
+
+Wozu wollen wir nun überhaupt solche iterierten Funktionen anschauen? Eine mögliche Interpretation ist die folgende: Stellt euch vor eure Menge $A$ beschreibt gewissen Zustände in welchem sich ein physikalisches System befinden kann. Zum Beispiel könnte $A=\{\text{Kopf, Zahl}\}$ die Zustände einer Münze beschreiben. Dann könnte $f:A\lra A$ eine (festgelegte) Änderung dieses Zustands beschreiben und die Anwendung von $f$ entspricht einem "`Zeitschritt"' oder einer solchen Änderung. Beispielsweise würde
+\begin{equation*}
+  f(x)=\begin{cases} \text{Kopf} \quad x=\text{Zahl}\\ \text{Zahl} \quad x=\text{Kopf}\end{cases}
+\end{equation*}
+dem einmaligen Umdrehen der Münze entsprechen. Das heißt, $f^n$ beschreibt das $n$-malige Umdrehen der Münze.
+
+Bei einem iterierten Funktionensystem interessiert man sich vor allem, wie sich ein Punkt $x$ verhält, wenn wir die Abbildung sehr oft anwenden. Dazu gibt es den Begriff des Orbits.
+
 \begin{definition}
 Sei $x\in A$. Der Orbit\footnote{Orbit heißt Laufbahn. Die Bezeichnung kommt daher, dass man sich vorstellt, dass $x$ eine Position eines Punktes ist, der sich nach folgender Regel bewegt: Ist der Punkt zu einem Zeitschritt am Ort $x$, ist er im nächsten Zeitschritt am Ort $f(x)$.} von $x$ unter $A$ ist die Menge
 \[
 \mathcal{O}^+(x) = \{x, f(x), f^2(x), f^3(x) ,\ldots\}.
 \]
 \end{definition}
+
 \begin{beispiel}
 Mit dem obigen System ist $\mathcal{O}^+(1) = \{1,4,3,4,3,\ldots\}$.
 \end{beispiel}
+
+\begin{aufgabe}{Orbit einer Abbildung}
+  \begin{enumerate}
+    \item Bestimme den Orbit von $2$ unter $f$ aus Beispiel~\ref{bsp11}.
+    \item Bestimme den Orbit von $3$ unter $f$ aus Beispiel~\ref{bsp11}.
+  \end{enumerate}
+\end{aufgabe}
+
+% Bis hierher grob durchgesehen, Sven.
+
 Das einfachste Verhalten ist natürlich, wenn der Orbit nur aus einem Punkt besteht. In diesem Fall hat der Punkt einen besonderen Namen.
 \begin{definition}
 Ein Punkt $x$ heißt Fixpunkt, wenn gilt $f(x) =x$.
