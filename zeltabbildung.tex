@@ -134,7 +134,7 @@ Lustig, nicht? So kann man auch mit Symbolen statt Zahlen rechnen.
 
 Auf jeder Menge $A$ gibt es eine besondere Abbildung, und zwar die Identität $\text{id}_A$, die jedes Element auf sich selbst abbildet. 
 Zum Beispiel gilt für $\id_{\RR}\, : \, \RR\lra\RR$, dass $\id_{\RR}(3,7)=3,7$ ist. 
-Diese Abbildung hast du vielleicht in der Schule schon kennengelernt, mit dem Funktionsgraphen als ``Winkelhalbierende'', $f(x) = x$.
+Diese Abbildung hast du vielleicht in der Schule schon kennengelernt, mit dem Funktionsgraphen als "`Winkelhalbierende"', $f(x) = x$.
 Wenn nicht, macht das aber auch nichts.
 
 Die Identitätsabbildung darf man aber nicht verwechseln mit einer \emph{konstanten Abbildung} $\text{const}_{c}:\RR\lra\RR$, wobei $c\in\RR$ eine beliebige gewählte (aber jetzt feste) reelle Zahl ist. 
@@ -157,8 +157,7 @@ Eine negative Zahl $x$ wird auf $-x$ abgebildet. Man kann also kurz schreiben
 Solche Fallunterscheidungen liest man übrigens wie folgt: Wenn das Argument $x$ größer oder gleich Null ist, 
 so nimmt $b$ den Wert an, welcher in der Zeile für diesen Fall steht, hier also die obere Zeile, wo $b(x)=x$ notiert ist. 
 Falls aber $x<0$ gilt, so sind wir auf der unteren Zeile, wo $b(x)=-x$ steht.
-Für den Betrag einer Zahl $x$ schreibt man üblicherweise $|x|$ weil man keine Lust hat, das so kompliziert zu machen,
-also gilt $b(x)=|x|$. 
+Für den Betrag einer Zahl $x$ schreibt man üblicherweise die Abkürzung $|x|$, also gilt $b(x)=|x|$. 
 Man bekommt also beispielsweise $b(3,7) = |3,7| = 3,7, b(-5) = 5$ und $b(100-3) = 97$ heraus.
 
 
@@ -204,7 +203,7 @@ da der Wert \emph{Bonbon} mit keinem der Werte aus $A$ getroffen wird.
  $z(x) = \text{Bonbon für alle $x$ aus }A$ ist aber auch nicht surjektiv).
 
 Die Funktion $z$ wie zu Beginn beschrieben ist aber nicht injektiv. Injektiv bedeutet, dass zu jedem Fall im Bild, also zu 
-Bonbon und nicht Bonbon nur ein einziges Kind (oder keines) existiert, welches diesen Fall auslöst. 
+Bonbon und nicht Bonbon nur ein einziges Kind (oder gar keines) existiert, welches diesen Fall auslöst. 
 Das stimmt aber nicht. Sowohl Julia und Martin lösen beide das Bonbon aus.
 
 \begin{aufgabe}{Injektiv?}
@@ -294,14 +293,16 @@ das heißt, zuerst wendet man $f$ an und danach $g$ auf das Ergebnis von $f$.
 \begin{beispiel}
   \begin{enumerate}
     \item 
-    Sei $f:x\mapsto 2x$ und $g:x \mapsto x^2$. Dann ist
-      \[
-        g\circ f: x\mapsto (2x)^2 = 4x^2.
-      \]
-    \item Sei jetzt $f:x \mapsto x-3$ und $g:x \mapsto x^2 +1$. Dann ist 
-    \[
-        g\circ f: x\mapsto (x-3)^2 +1.
-      \]
+    Seien $f:\RR\longrightarrow\RR$ mit $f:x\mapsto 2x$ und $g:\RR\longrightarrow\RR$ mit $g:x \mapsto x^2$ gegeben. Dann ist
+      \begin{align*}
+        g\circ f:\RR & \longrightarrow \RR \\ 
+        x & \longmapsto (2x)^2 = 4x^2.
+      \end{align*}
+    \item Seien jetzt $f:\RR\lra\RR$ mit $f:x \mapsto x-3$ und $g:\RR\lra\RR$ mit $g:x \mapsto x^2 +1$ gegeben. Dann ist 
+      \begin{align*}
+        g\circ f:\RR & \lra \RR \\
+        x & \longmapsto (x-3)^2 +1.
+      \end{align*}
       Achtung: $g \circ f$ ist \underline{nicht} $x \mapsto x-3^2 +1$.
       Man muss den Funktionsausdruck $x-3$ nämlich wie eine Zahl in $g$ 
       einsetzen und dadurch wird der ganze Ausdruck quadriert.
@@ -390,7 +391,7 @@ Dies bezeichnen wir als iteriertes\footnote{Iterieren bedeutet einfach Wiederhol
 
 \begin{beispiel}
 \label{bsp11}
-Wir haben die Menge $A=\{1,2,3,4 \}$. Betrachte die Funktion
+Wir haben die Menge $A=\{1,\,2,\,3,\,4 \}$. Betrachte die Funktion
 \begin{align}
 f(x)=\begin{cases}
 2 & x=2, \\
@@ -405,7 +406,7 @@ f(x)=\begin{cases}
 
 \begin{aufgabe}{Funktionsgraphen}
   In der Schule lernt ihr das auch sehr intensiv kennen: Malt den \emph{Funktionsgraphen} von $f$. 
-  Das heißt, ihr tragt in der horizontalen Richtung die $x$-Werte zum Beispiel von $-4$ bis $4$ und in der vertikalen Richtung die zugehörigen Werte von $f(x)$ ab. 
+  Das heißt, ihr tragt in der horizontalen Richtung die $x$-Werte zum Beispiel von $0$ bis $5$\footnote{Den sinnvollsten Bereich der $x$-Werte hängt immer davon ab, was ihr von der Funktion zeigen wollt. In diesem Falle sind $0$ und $5$ etwas größer als die Menge $A$ weshalb ihr genug Platz zum Zeichnen habt} und in der vertikalen Richtung die zugehörigen Werte von $f(x)$ ab. 
   Dies hilft um sich vorzustellen, was eine Funktion macht.
 \end{aufgabe}
 
@@ -433,7 +434,7 @@ ist $f^4 (x) = f(f(f(f(x))))$. (Jetzt merkst du bestimmt, warum man lieber die k
 
 Wozu wollen wir nun überhaupt solche iterierten Funktionen anschauen? 
 Eine mögliche Interpretation ist die folgende: 
-Stellt euch vor eure Menge $A$ beschreibt gewissen Zustände in welchem sich ein physikalisches System befinden kann. 
+Stellt euch vor, eure Menge $A$ beschreibt gewissen Zustände, in welchen sich ein physikalisches System befinden kann. 
 Zum Beispiel könnte $A=\{\text{Kopf, Zahl}\}$ die Zustände einer Münze beschreiben. 
 Dann könnte $f:A\lra A$ eine (festgelegte) Änderung dieses Zustands beschreiben und die Anwendung von $f$ entspricht einem "`Zeitschritt"' oder einer solchen Änderung. 
 Beispielsweise würde
@@ -473,6 +474,13 @@ Wie geht das denn weiter?
   \end{enumerate}
 \end{aufgabe}
 
+\begin{aufgabe}{Bestimmung des Orbits einer Abbildung mittels des Funktionsgraphen}
+  \begin{enumerate}
+    \item Stell dir vor, du hast eine beliebige Funktion $f$ als Funktionsgraphen gegeben. Wie kannst du geometrisch ohne zu rechnen $f^n(x)$ für einen Punkt $x$ bestimmen? Überlege dir dazu, mit welcher geometrischen Operation du von einem Wert $y=f(x)$ auf der $y$-Achse zu dem gleichen Wert auf der $x$-Achse kommst.
+    \item Wende das Verfahren auf den Graphen von $f(x)=x^2$ für ein $x$ kleiner als $1$ an und danach auf ein $x$ größer als $1$. Fertige die Zeichnungen sorgfältig an!
+  \end{enumerate}
+\end{aufgabe}
+
 % Bis hierher grob durchgesehen, Sven.
 
 Das einfachste Verhalten ist natürlich, wenn der Orbit nur aus einem Punkt besteht.
@@ -484,24 +492,25 @@ Ein Punkt $x^{*}$ heißt Fixpunkt, wenn gilt $f(x^{*}) =x^{*}$.
 Fixpunkte sind bei Mathematikerinnen und Mathematikern sehr beliebt, weil sie einfach schön sind.
 Darum nennen Mathematiker sie auch fast immer $x^{*}$, weil Sternchen auch so schön sind.
 
-Manchmal kann man sie ganz leicht ausrechnen.
 \begin{beispiel}
   Gucken wir uns doch mal $f \, : \, \mathbb{R} \to \mathbb{R}$ an, mit $f(x) = x^2 + 3x$.
   Ein Fixpunkt ist Lösung der Gleichung $f(x) = x$, also $x^2 + 3x = x$.
   Und das kann man ziemlich leicht lösen, denn wir subtrahieren einfach $x$ und bekommen $x^2 + 2x = 0$.
-  Jetzt kann man ein $x$ ausklammern und wir haben $x (x + 2) = 0$. Als Lösung kommt also $x^{*} = 0$ oder 
-  $x^{*} = -2$ infrage. 
+  Jetzt kann man ein $x$ ausklammern und wir haben $x (x + 2) = 0$. Als Lösung kommt also $x^{*} = 0$ oder $x^{*} = -2$ infrage und das sind tatsächlich Fixpunkte.
 \end{beispiel}
 
 \begin{aufgabe}{Fixpunkte -- sie sind einfach überall!}
   Bestimme die Fixpunkte der Funktionen 
   \begin{itemize}
    \item $f \, : \, \mathbb{R} \to \mathbb{R}$ an, mit $f(x) =  x^3 - 3x$,
-   \item $f \, : \, \mathbb{R} \to \mathbb{R}$ an, mit $f(x) = -x^2 + 1$.
+   \item $f \, : \, \mathbb{R} \to \mathbb{R}$ an, mit $f(x) = -x^2 + x + 1$,
+   \item $f \, : \, \mathbb{R} \to \mathbb{R}$ an, mit $f(x) = -x^2 + 1$.\footnotemark
   \end{itemize}
-  Ein Fixpunkt der letzten Funktion ist übrigens der goldene Schnitt! 
+  Ein Fixpunkt der letzten Funktion ist übrigens der goldene Schnitt!
   Wenn du den nicht kennst, ist das gar nicht schlimm, aber es ist schon erstaunlich, was sich so alles als Fixpunkt entpuppen kann, nicht wahr?
 \end{aufgabe}
+
+\footnotetext{Hier benötigt man die sogenannte "`Mitternachtsformel"'. Die heißt so, weil es eine der wenigen Formeln in der Mathematik ist, die so oft benutzt wird, dass man sie auch mitten in der Nacht auswendig aufsagen können muss. Sie besagt, dass wenn $x\in\RR$ eine Lösung von $ax^2+bx+c=0$ ist, wobei $a,\,b,\,c\in\RR$ beliebig sind, dann gibt es zwei Möglichkeiten für $x$ und zwar $x_1=\frac{-b+\sqrt{b^2-4ac}}{2a}$ und $x_2=\frac{-b-\sqrt{b^2-4ac}}{2a}$.}
 
 Manchmal lässt sich ein Fixpunkt nicht so einfach ausrechnen, weil es sehr komplizierte Funktionen gibt.
 Aber man kann ihn manchmal trotzdem mit dem Taschenrechner annähern, was ich dir jetzt zeigen werde.
@@ -512,16 +521,15 @@ Und jetzt wendet man einfach wiederholt $f$ auf diesen Wert an.
 Schauen wir das Beispiel $f(x) = \frac{1}{2}x  $ an.
 Als Startwert nehmen wir einfach mal $x_0 = 5$.
 Jetzt berechnen wir $x_1 = f(x_0) = \frac{5}{2} , x_2 = f(x_1) = f(f(x_0))= \frac{5}{4}, \ldots$.
-Mit dem Taschenrechner geht das mit der \emph{ANS}-Taste ganz leicht, viele Schritte zu machen.
-Du wirst sehen, dass der Wert sich immer mehr der $0$ annähert und tatsächlich ist $0$ ein Fixpunkt von $f$.
+Auf dem Taschenrechner kann man mit der \emph{ANS-Taste} ganz leicht viele Schritte machen.
+Du wirst sehen, dass der Wert sich immer mehr der $0$ annähert und diese ist ein Fixpunkt von $f$.
 
 Leider klappt dieses Verfahren nicht immer.
 Probier es mal mit verschiedenen Startwerten und $f(x) =  x^3 - 3x$ aus!
 
 Zum Abschluss noch ein Teaser.
 
-Vielleicht hast du dich schon mal gefragt, wie man eigentlich ohne Probieren Näherungslösungen von Gleichungen 
-finden kann. Ohne jetzt die Hintergründe dieses sogenannten \emph{Newton-Verfahrens} ansprechen zu wollen, zeige ich dir hier die Formel:
+Vielleicht hast du dich schon mal gefragt, wie man eigentlich ohne Probieren Lösungen von Gleichungen finden kann. Das ist meistens sehr schwer, tatsächlich kann man die meisten Gleichungen gar nicht durch Umstellen lösen. Stattdessen interessiert man sich oft für sogenannte \emph{Näherungslösungen}, also Zahlen, die sehr nah an der tatsächlichen Lösung liegen. Für viele praktische Anwendungen reicht dies bereits. Ohne jetzt die Hintergründe einer solchen Methode, zum Beispiel dem sogenannten \emph{Newton-Verfahren}, ansprechen zu wollen, zeige ich dir hier die Formel:
 Wenn man eine "`normierte kubische Gleichung"' hat, zum Beispiel 
 \begin{align*}
  x^3 - 2x - 9 = 0,
@@ -535,7 +543,7 @@ Nimm also einen Taschenrechner, gib irgendeine Anfangszahl ein, und gib dann die
 \begin{align*}
  \text{ANS} - (\text{ANS}^3 - 2 \cdot \text{ANS} -9) : (3 \cdot \text{ANS}^2). 
 \end{align*}
-Drücke dann mehrmals ANS. Das Ergebnis wird ca. $2,4$ sein -- eine Lösung dieser Gleichung.
+Drücke dann mehrmals ANS, was ca. $2,4$ geben wird -- eine Lösung dieser Gleichung.
 
 \begin{aufgabe}{Noch kompliziertere Gleichungen}
  Versuche das Verfahren mal mit der Gleichung 
