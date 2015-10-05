@@ -111,3 +111,6 @@ sympy-plots-for-*.tex/
 # Zipdateien
 *.zip
 *~
+
+# Zeug
+Release.key
